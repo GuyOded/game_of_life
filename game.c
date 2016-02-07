@@ -40,7 +40,7 @@ static void init_live_list(char grid[][GRID_SIZE], List *live_cells);
 static bool import_from_file(char grid[][GRID_SIZE], char *file_name);
 
 /* definitions */
-void play(char *file_name)
+void play(char *file_name)  // T: not the same declaration as the header file. should be const char* file_name
 {
 	char grid[GRID_SIZE][GRID_SIZE];
 	init_grid(grid);
@@ -59,7 +59,7 @@ void play(char *file_name)
 		print_grid(grid);
 		do_turn(grid, live_cells);
 	}
-	destroy(live_cells);
+	destroy(live_cells); // T: looks nice
 }
 
 
